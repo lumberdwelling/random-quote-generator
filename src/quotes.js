@@ -3,37 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-class Background extends Component {
+class Quotes extends Component {
     constructor() {
         super();
         this.state = {
-            quotes: [],
+            title: [],
+            content: []
         };
     }
-}
 
 componentDidMount() {
 
     fetch('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
     .then(results => {
-        return.results.json();
+        return results.json();
     }).then(data => {
-        let quotes = data.results.map((quote) => (
+        let quotes = data.results.map((title) => {
             return(
-                <div key=(quote.results) />
+                <div key={title.results} />
             )
         })
-    this.setState({text: text});
-    console.log("state", this.state.quotes);
+    this.setState({quotes: quotes});
+    console.log("state", this.state.title);
     })
 }
 
 render() {
-    return {
+    return (
 
 <div className="quote1">
     <div className="author">
-        (this.state.quotes)
+        {this.state.title}
     </div>
 </div>
-}
+    )}}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import shakespeare from './shakespeare-emoji.png'
+import shakespeare from './shakespeare-emoji.png';
+import Quotes from './quotes.js';
 
 class App extends Component {
   render() {

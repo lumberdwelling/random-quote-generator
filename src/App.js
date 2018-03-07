@@ -12,6 +12,7 @@ class App extends Component {
           <h1 className="App-title">Random Quote Generator</h1>
         </header>
         <button className="firstButton"> Click me for a random quote! </button>
+        <Quotes />
       </div>
     );
   }

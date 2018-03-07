@@ -8,32 +8,33 @@ class Quotes extends Component {
         super();
         this.state = {
             title: [],
-            content: []
+            content: [],
         };
     }
 
-componentDidMount() {
+componentWillMount() {
 
     fetch('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
     .then(results => {
         return results.json();
     }).then(data => {
-        let quotes = data.results.map((title) => {
+        let quotes = data.results.map((quote) => { 
             return(
-                <div key={title.results} />
+                <div key={quote.results} />
             )
         })
     this.setState({quotes: quotes});
-    console.log("state", this.state.title);
+    console.log("state", this.state.quotes);
     })
 }
 
 render() {
     return (
 
-<div className="quote1">
-    <div className="author">
-        {this.state.title}
-    </div>
+<div>
+    {this.state.content}
+    {this.state.title}
 </div>
     )}}
+
+export default Quotes;
